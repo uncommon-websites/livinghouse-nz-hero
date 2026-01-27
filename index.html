@@ -3,57 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Living House Hero</title>
+    <title>Living House Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Custom utility for the massive text to match design exactly */
-        .text-massive {
-            font-size: 15.5vw;
-            line-height: 0.8;
-        }
     </style>
 </head>
-<body class="bg-white text-black m-0 p-0">
+<body class="bg-white text-black antialiased">
 
-    <div class="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-10 py-6 md:py-10 w-full">
+    <main class="w-full px-4 md:px-6 py-6 max-w-[1920px] mx-auto">
         
-        <!-- Header Section -->
-        <header class="mb-8 md:mb-16">
-            <!-- Main Title -->
-            <h1 class="text-massive font-bold tracking-tighter text-black w-full -ml-[0.05em]">
+        <!-- Typography Section -->
+        <div class="flex flex-col mb-12 md:mb-16">
+            <!-- Main Heading -->
+            <!-- Using vw units to match the massive scale relative to viewport width -->
+            <h1 class="text-[15.5vw] leading-[0.8] font-bold tracking-tighter text-black -ml-[0.05em]">
                 Living House
             </h1>
             
-            <!-- Subtext -->
-            <div class="flex justify-end mt-6 md:mt-8 w-full">
-                <div class="w-full md:w-1/2 lg:w-[45%]">
-                    <p class="text-2xl md:text-3xl lg:text-[2.5rem] leading-[1.1] font-medium tracking-tight text-black">
+            <!-- Subheading -->
+            <!-- Aligned to the right side (under 'House') -->
+            <div class="flex justify-end mt-8 md:mt-10">
+                <div class="w-full md:w-1/2 pl-1">
+                    <p class="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight tracking-tight max-w-2xl">
                         Low cost, fast build, climate positive houses designed by RTA Studio.
                     </p>
                 </div>
             </div>
-        </header>
+        </div>
 
         <!-- Hero Image Section -->
         <div class="relative w-full h-[50vh] md:h-[75vh] overflow-hidden">
-            <!-- Placeholder Image styled to match the aspect ratio and coverage -->
-            <img src="https://placehold.co/1920x1080/6fa8dc/2c5e2e?text=Living+House+Image" 
-                 alt="House with green roof and blue sky" 
-                 class="w-full h-full object-cover block" />
+            <!-- Image Placeholder -->
+            <img src="https://placehold.co/1920x1080" alt="Living House Exterior with trees and sky" class="w-full h-full object-cover object-center">
             
             <!-- Floating Action Button -->
-            <button class="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white text-black border border-black px-8 py-3 rounded-full text-sm md:text-base font-medium hover:bg-gray-50 transition-colors duration-200">
-                Learn More
-            </button>
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+                <button class="bg-white text-black border border-black px-8 py-3 rounded-full text-sm md:text-base font-medium hover:bg-gray-100 transition-colors duration-200">
+                    Learn More
+                </button>
+            </div>
         </div>
 
-    </div>
+    </main>
 
 </body>
 </html>
