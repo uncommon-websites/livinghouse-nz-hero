@@ -3,134 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Living House Hero</title>
+    <title>Living House</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Typography Utilities */
-        .text-balance { text-wrap: balance; }
-        .text-pretty { text-wrap: pretty; }
-        
-        /* Custom Font settings to match the geometric sans look */
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Animation keyframes */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-                filter: blur(4px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-                filter: blur(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.97); }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        /* Animation classes */
         .animate-fade-in-up {
             opacity: 0;
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-
         .animate-fade-in {
             opacity: 0;
-            animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-
         .animate-scale-in {
             opacity: 0;
-            animation: scaleIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Staggered delays */
         .delay-0 { animation-delay: 0ms; }
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
         .delay-300 { animation-delay: 300ms; }
         .delay-400 { animation-delay: 400ms; }
         .delay-500 { animation-delay: 500ms; }
-        .delay-700 { animation-delay: 700ms; }
+        .delay-600 { animation-delay: 600ms; }
 
-        /* Accessibility */
+        .text-balance { text-wrap: balance; }
+        .text-pretty { text-wrap: pretty; }
+
         @media (prefers-reduced-motion: reduce) {
-            .animate-fade-in-up,
-            .animate-fade-in,
-            .animate-scale-in {
+            .animate-fade-in-up, .animate-fade-in, .animate-scale-in {
                 animation: none;
                 opacity: 1;
                 transform: none;
-                filter: none;
             }
+        }
+
+        /* Custom utility for the massive text to ensure tight tracking */
+        .tracking-super-tight {
+            letter-spacing: -0.06em;
         }
     </style>
 </head>
-<body class="bg-white text-black overflow-x-hidden">
+<body class="bg-white text-black font-sans antialiased selection:bg-black selection:text-white overflow-x-hidden">
 
-    <!-- Main Hero Container -->
-    <main class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20">
-        
-        <!-- Typography Section -->
-        <div class="flex flex-col mb-12 lg:mb-16">
-            
-            <!-- Massive Headline -->
-            <!-- Using fluid typography (vw units) to match the massive scale in the screenshot while keeping it responsive -->
-            <h1 class="animate-fade-in-up delay-100 font-bold tracking-tighter leading-[0.85] text-black mb-6 lg:mb-8 text-[13vw] lg:text-[180px] xl:text-[200px] text-balance">
-                Living House
-            </h1>
-
-            <!-- Subheadline / Description -->
-            <!-- Aligned to the right to match the design layout -->
-            <div class="w-full flex justify-end pr-2 lg:pr-4">
-                <div class="animate-fade-in-up delay-300 max-w-xl lg:max-w-2xl">
-                    <p class="text-2xl sm:text-3xl lg:text-4xl font-medium leading-tight text-pretty text-black">
-                        Low cost, fast build, climate positive houses designed by RTA Studio.
-                    </p>
+    <main>
+        <!-- Hero Header Section -->
+        <section class="w-full px-4 md:px-6 lg:px-8 pt-6 md:pt-10 pb-8 md:pb-12">
+            <div class="max-w-[1800px] mx-auto">
+                <div class="flex flex-col md:flex-row md:items-start">
+                    <!-- "Living" -->
+                    <h1 class="text-[22vw] md:text-[14vw] lg:text-[13.5vw] leading-[0.85] tracking-super-tight font-bold m-0 p-0 md:mr-[2.5vw] animate-fade-in-up delay-100">
+                        Living
+                    </h1>
+                    
+                    <!-- "House" and Subheadline Container -->
+                    <div class="flex flex-col animate-fade-in-up delay-200 mt-2 md:mt-0">
+                        <h1 class="text-[22vw] md:text-[14vw] lg:text-[13.5vw] leading-[0.85] tracking-super-tight font-bold m-0 p-0">
+                            House
+                        </h1>
+                        <p class="mt-4 md:mt-5 text-xl md:text-2xl lg:text-3xl xl:text-[2.5rem] font-medium leading-[1.1] tracking-tight">
+                            Low cost, fast build, climate positive<br class="hidden md:block"> houses designed by RTA Studio.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Hero Image Section -->
-        <div class="relative w-full animate-scale-in delay-500 group">
-            <!-- Image Container with Aspect Ratio -->
-            <!-- Using a wide aspect ratio to match the panoramic feel of the screenshot -->
-            <div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-gray-100">
-                <img 
-                    src="https://placehold.co/1920x800/e2e8f0/1e293b?text=Living+House+Exterior" 
-                    alt="Living House Exterior with trees and blue sky" 
-                    class="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
-                >
-                
-                <!-- Overlay Button -->
-                <!-- Positioned absolutely at the bottom center of the image -->
-                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-fade-in-up delay-700 w-max">
-                    <button class="bg-white text-black border border-black/10 px-8 py-3 rounded-full text-sm sm:text-base font-medium hover:bg-black hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+        <section class="w-full px-4 md:px-6 lg:px-8 pb-16 md:pb-24">
+            <div class="max-w-[1800px] mx-auto relative animate-scale-in delay-400">
+                <!-- Image Wrapper -->
+                <div class="w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[2/1] overflow-hidden bg-gray-100">
+                    <img 
+                        src="https://placehold.co/2400x1200/87CEEB/ffffff?text=Living+House+Exterior+View" 
+                        alt="Exterior view of the Living House with green cladding under a blue sky" 
+                        class="w-full h-full object-cover object-center"
+                    />
+                </div>
+
+                <!-- Floating CTA Button -->
+                <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-10 animate-fade-in-up delay-500">
+                    <a 
+                        href="#" 
+                        class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-black text-sm font-medium rounded-full border border-black transition-all duration-200 hover:bg-gray-100 active:scale-[0.97]"
+                    >
                         Learn More
-                    </button>
+                    </a>
                 </div>
             </div>
-        </div>
-
+        </section>
     </main>
 
 </body>
